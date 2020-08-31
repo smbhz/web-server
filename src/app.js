@@ -6,6 +6,9 @@ const geocode=require('./utils/geocode.js')
 const forecast=require('./utils/forecast.js')
 
 const app=express()
+
+const port = process.env.PORT || 3003
+
 // setting handlebars
 const publicDirectoryPath=path.join(__dirname,'../public')
 app.set('view engine','hbs')
@@ -102,6 +105,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3003,()=>{
-    console.log('server started on port 3003!')
+app.listen(port,()=>{
+    console.log('server started on port'+ port)
 })

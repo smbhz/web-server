@@ -7,7 +7,7 @@ weatherForm.addEventListener('submit',(e)=>{
     console.log(search.value)
     msg1.textContent='Loading'
     msg2.textContent=' '
-    fetch('http://localhost:3003/weather?address='+search.value).then((response)=>{
+    fetch('/weather?address='+search.value).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             console.log(data.error)
